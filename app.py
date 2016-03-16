@@ -5,7 +5,7 @@ import datetime
 from datetime import datetime
 
 #from bokeh.io import push_notetbook
-from bokeh.plotting import *
+from bokeh.plotting import figure
 
 import numpy as np
 #from ipywidgets import interact
@@ -40,10 +40,12 @@ def index():
       
 @app.route('/result' , methods=['POST'])
 def result():
-    x = range(10)
-    plot = figure()
-    plot.line(x, x)
-    script, div = components(plot) 
+
+
+# add a circle renderer with a size, color, and alpha
+    p = figure(plot_width=400, plot_height=400)
+    p.circle([1, 2, 3, 4, 5], [6, 7, 2, 4, 5], size=20, color="navy", alpha=0.5)
+    script, div = components(p) 
     return render_template('graph.html', script=script, div=div)    
 
 
