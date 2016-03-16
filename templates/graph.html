@@ -4,12 +4,12 @@
     href="http://cdn.pydata.org/bokeh/release/bokeh-0.10.0.min.css"
     rel="stylesheet" type="text/css">
    <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.10.0.min.js"></script>
-    {{ script}}
+    {{ script | safe }}
   </head>
   <body>
     <div class=page>
       <h1>Header text</h1>
-      {{ div }}
+      {{ div | safe}}
     </div>
   </body>
 </html>
