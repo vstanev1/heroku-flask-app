@@ -17,7 +17,7 @@ def index():
       app.vars['stock_tkr'] = request.form['stock_tkr']   
   
 @app.route('/result')
-def index():
+def result():
       return render_template('index.html' ,methods=['GET','POST'])  
 
 if __name__ == '__main__':
