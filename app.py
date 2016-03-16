@@ -12,7 +12,7 @@ import numpy as np
 
 #from bokeh.plotting import figure
 from bokeh.resources import CDN
-from bokeh.embed import file_html
+#rom bokeh.embed import file_html
 from bokeh.embed import components 
 
 
@@ -40,8 +40,9 @@ def index():
       
 @app.route('/result' , methods=['POST'])
 def result():
+    x = range(10)
     plot = figure()
-    plot.circle([1,2], [3,4]) 
+    plot.line(x, x)
     script, div = components(plot) 
     return render_template('graph.html', script=script, div=div)    
 
