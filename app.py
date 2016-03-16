@@ -20,6 +20,7 @@ from bokeh.embed import components
 app = Flask(__name__)
 
 app.vars={}
+stktr = ''
 
 @app.route('/' , methods=['GET','POST'])
 def main():
@@ -31,23 +32,7 @@ def main():
     # app.vars['stock_tkr'] = request.form['stock_tkr'] 
      
      # stock_tick = app.vars['stock_tkr']
-        stktr  = request.form['stock_tkr'] 
-        web_adr = 'https://www.quandl.com/api/v3/datasets/WIKI/' + stock_tick + '.json'
-        r = requests.get(web_adr)
-        #json_data = r.json()
-        parsed_data = json.loads(r.text)
-        new_data = pd.DataFrame(parsed_data['dataset']['data'])
-        #parsed_data['dataset']['data']
-        
-        #calendar.day_name[datetime.strptime('01/26/2016', '%m/%d/%Y').date().weekday()]
-        datetime.strptime(new_data[0][0], '%Y-%m-%d').date()
-        f = lambda x: datetime.strptime(x, '%Y-%m-%d').date()
-        new_data['Date'] = new_data[0].map(f)
-        
-        p=figure(title= 'New new figure', x_axis_type="datetime")
-        r = p.line(new_data['Date'][1:30].values, new_data[1][1:30].values)
-        script, div = components(p) 
-        return render_template('graph.html', script=script, div=div)
+       stktr  = request.form['stock_tkr'] 
      #return render_template('index.html') 
   #return  app.vars['stock_tkr']
 
@@ -60,7 +45,7 @@ def index():
       #?return render_template('index2.html')
       
 @app.route('/result' , methods=['POST'])
-def result():
+def result(stktr):
 
 
 # add a circle renderer with a size, color, and alpha
@@ -68,7 +53,7 @@ def result():
   #  p.circle([1,2], [3,4])
   #  script, div = components(p) 
  #  return render_template('graph.html', script=script, div=div)  
-        stock_tick = app.vars['stock_tkr']
+        stock_tick =stktr
         web_adr = 'https://www.quandl.com/api/v3/datasets/WIKI/' + stock_tick + '.json'
         r = requests.get(web_adr)
         #json_data = r.json()
