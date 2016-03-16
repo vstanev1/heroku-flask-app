@@ -2,13 +2,21 @@ from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
+app.vars={}
+
 @app.route('/')
 def main():
-  return redirect('/index')
+  return redirect('/index' ,methods=['GET','POST'])
 
 @app.route('/index')
 def index():
-  return render_template('index2.html')
+  return render_template('index2.html' ,methods=['GET','POST'])
+  
+@app.route('/result')
+def index():
+  if request.method == 'POST':  
+      app.vars['stock_tkr'] = request.form['stock_tkr']
+      return render_template('index.html' ,methods=['GET','POST'])  
 
 if __name__ == '__main__':
   app.run(port=33507)
