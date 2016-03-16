@@ -7,7 +7,7 @@ app.vars={}
 @app.route('/')
 def main():
   #return redirect('/index' ,methods=['GET','POST'])
-   return render_template('index.html' ,methods=['GET','POST'])  
+   return render_template('index.html')  
 
 @app.route('/index')
 def index():
