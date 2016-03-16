@@ -13,7 +13,7 @@ import numpy as np
 #from bokeh.plotting import figure
 from bokeh.resources import CDN
 from bokeh.embed import file_html
-from plots import build_plot
+
 
 app = Flask(__name__)
 
@@ -46,11 +46,11 @@ def result():
      # Html_file= open("templates/index3.html","w")
      # Html_file.write(html)
      # Html_file.close()
-      #return render_template('index3.html') 
-     plot_snippet = build_plot()
+     return render_template('index2html') 
+     #lot_snippet = build_plot()
 
     #return render_template('plots.html', snippet=plot_snippet)
-    return render_template(plot_snippet) 
+#   return render_template(plot_snippet) 
    
 
 if __name__ == '__main__':
