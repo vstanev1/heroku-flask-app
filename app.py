@@ -31,8 +31,8 @@ def main():
    else:  
     # app.vars['stock_tkr'] = request.form['stock_tkr'] 
      
-     # stock_tick = app.vars['stock_tkr']
-       stktr  = request.form['stock_tkr'] 
+      stock_tick = app.vars['stock_tkr']
+     #stktr  = request.form['stock_tkr'] 
      #return render_template('index.html') 
   #return  app.vars['stock_tkr']
 
@@ -45,7 +45,7 @@ def index():
       #?return render_template('index2.html')
       
 @app.route('/result' , methods=['POST'])
-def result(stktr):
+def result():
 
 
 # add a circle renderer with a size, color, and alpha
