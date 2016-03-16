@@ -20,10 +20,11 @@ def index():
      return render_template('index2.html')
   else:  
       app.vars['stock_tkr'] = request.form['stock_tkr']   
-      return render_template('index.html' ,methods=['GET','POST'])
-@app.route('/result')
+      return render_template('index.html')
+      
+@app.route('/result' ,methods=['GET','POST'])
 def result():
-      return render_template('index.html' ,methods=['GET','POST'])  
+      return render_template('index.html')  
 
 if __name__ == '__main__':
   app.run(port=33507)
