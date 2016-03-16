@@ -46,10 +46,10 @@ def result():
      # Html_file.write(html)
      # Html_file.close()
       #return render_template('index3.html') 
-     plot_snippet = build_plot()
+     #plot_snippet = build_plot()
 
-     return render_template('plots.html', snippet=plot_snippet)
-    # return render_template('index.html') 
+     #return render_template('plots.html', snippet=plot_snippet)
+     return render_template('index3.html') 
    
 
 if __name__ == '__main__':
