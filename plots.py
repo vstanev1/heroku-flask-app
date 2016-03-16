@@ -20,9 +20,9 @@ def build_plot():
 
      line(x_data, y_data)
      
-     snippet = curplot().create_html_snippet(embed_base_url='../static/js/', embed_save_loc='./static/js')
-
+     #snippet = curplot().create_html_snippet(embed_base_url='../static/js/', embed_save_loc='./static/js')
+     snippet =  'index2.html'
     # Return the snippet we want to place in our page.
 
-     #return snippet
-     return 'index2.html'
+     return snippet
+ 
