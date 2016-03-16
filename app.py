@@ -48,7 +48,7 @@ def result():
       #return render_template('index3.html') 
      plot_snippet = build_plot()
 
-     return plot_snippet    
+     return render_template('plots.html', snippet=plot_snippet)
     # return render_template('index.html') 
    
 
