@@ -5,7 +5,9 @@ import datetime
 from datetime import datetime
 
 #from bokeh.io import push_notetbook
-from bokeh.plotting import figure
+from bokeh.plotting import *
+
+import numpy as np
 #from ipywidgets import interact
 
 #from bokeh.plotting import figure
@@ -44,7 +46,10 @@ def result():
      # Html_file.write(html)
      # Html_file.close()
       #return render_template('index3.html') 
-     return render_template('index.html') 
+     plot_snippet = build_plot()
+
+     return plot_snippet    
+    # return render_template('index.html') 
    
 
 if __name__ == '__main__':
