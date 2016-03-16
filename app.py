@@ -40,9 +40,9 @@ def index():
       
 @app.route('/result' , methods=['POST'])
 def result():
-    plot= figure()
-    plot.circle([1,2], [3,4])
-    script, div = components(plot)  
+    plot = figure()
+    plot.circle([1,2], [3,4]) 
+    script, div = components(plot) 
     return render_template('graph.html', script=script, div=div)    
 
 
