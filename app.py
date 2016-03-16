@@ -20,7 +20,7 @@ def index():
      return render_template('index2.html')
   else:  
       app.vars['stock_tkr'] = request.form['stock_tkr']   
-      return render_template('index.html')
+      return render_template('index2.html')
       
 @app.route('/result' , methods=['POST'])
 def result():
