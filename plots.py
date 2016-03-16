@@ -24,4 +24,5 @@ def build_plot():
 
     # Return the snippet we want to place in our page.
 
-     return snippet
+     #return snippet
+     return 'index2.html'

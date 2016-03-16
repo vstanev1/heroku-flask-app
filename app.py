@@ -49,8 +49,8 @@ def result():
       #return render_template('index3.html') 
      plot_snippet = build_plot()
 
-     return render_template('plots.html', snippet=plot_snippet)
-    #return render_template('index3.html') 
+    #return render_template('plots.html', snippet=plot_snippet)
+    return render_template(plot_snippet) 
    
 
 if __name__ == '__main__':
