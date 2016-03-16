@@ -13,6 +13,7 @@ import numpy as np
 #from bokeh.plotting import figure
 from bokeh.resources import CDN
 from bokeh.embed import file_html
+from plots import build_plot
 
 app = Flask(__name__)
 
