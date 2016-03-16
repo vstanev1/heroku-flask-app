@@ -46,7 +46,7 @@ def result():
      # Html_file= open("templates/index3.html","w")
      # Html_file.write(html)  
      # Html_file.close()
-     return render_template('index4.html')
+     return render_template('index5.html')
    #plot_snippet = build_plot()
   #  return render_template(plot_snippet)
     #return render_template('plots.html', snippet=plot_snippet)
