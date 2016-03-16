@@ -13,6 +13,7 @@ import numpy as np
 #from bokeh.plotting import figure
 from bokeh.resources import CDN
 from bokeh.embed import file_html
+from bokeh.embed import components 
 
 
 app = Flask(__name__)
@@ -39,14 +40,20 @@ def index():
       
 @app.route('/result' , methods=['POST'])
 def result():
-     # plot = figure()
+    plot= figure()
+    plot.circle([1,2], [3,4])
+    script, div = components(plot)  
+    return render_template('graph.html', script=script, div=div)    
+
+
+    # plot = figure()
      # plot.circle([1,2], [3,4])
         
      # html = file_html(plot, CDN, "my plot")
      # Html_file= open("templates/index3.html","w")
      # Html_file.write(html)  
      # Html_file.close()
-     return render_template('index5.html')
+    #return render_template('index5.html')
    #plot_snippet = build_plot()
   #  return render_template(plot_snippet)
     #return render_template('plots.html', snippet=plot_snippet)
