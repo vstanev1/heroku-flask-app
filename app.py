@@ -53,7 +53,7 @@ def result(stktr):
   #  p.circle([1,2], [3,4])
   #  script, div = components(p) 
  #  return render_template('graph.html', script=script, div=div)  
-        stock_tick =stktr
+        stock_tick = 'GOOG'
         web_adr = 'https://www.quandl.com/api/v3/datasets/WIKI/' + stock_tick + '.json'
         r = requests.get(web_adr)
         #json_data = r.json()
