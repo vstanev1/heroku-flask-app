@@ -43,7 +43,9 @@ def result():
      # Html_file= open("templates/index3.html","w")
      # Html_file.write(html)
      # Html_file.close()
-      return render_template('index3.html')  
+      #return render_template('index3.html') 
+     return render_template('index.html') 
+   
 
 if __name__ == '__main__':
   app.run(port=33507)
