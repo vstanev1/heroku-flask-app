@@ -2,11 +2,8 @@ from flask import Flask, render_template, request, redirect
 import pandas as pd
 import simplejson as json
 import numpy as np
-from ipywidgets import interact
-import path
 import datetime
 from datetime import datetime
-import calendar 
 
 #from bokeh.io import push_notetbook
 from bokeh.plotting import figure
