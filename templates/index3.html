@@ -4,11 +4,15 @@
     <head>
         <meta charset="utf-8">
         <title>my plot</title>
+ 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-bokeh-2.0.4.css') }}" type="text/css" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh.css') }}" type="text/css" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/continuum.css') }}" type="text/css" />
+ 
         
-<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css" type="text/css" />
-        
-<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="{{ url_for('static', filename='js/bokeh.js') }}"></script>
     Bokeh.set_log_level("info");
 </script>
     </head>
