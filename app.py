@@ -10,12 +10,13 @@ def main():
 
 @app.route('/index')
 def index():
-  return render_template('index2.html' ,methods=['GET','POST'])
+  if request.method == 'GET':  
+     return render_template('index2.html' ,methods=['GET','POST'])
+  if request.method == 'POST':  
+      app.vars['stock_tkr'] = request.form['stock_tkr']   
   
 @app.route('/result')
 def index():
-  if request.method == 'POST':  
-      app.vars['stock_tkr'] = request.form['stock_tkr']
       return render_template('index.html' ,methods=['GET','POST'])  
 
 if __name__ == '__main__':
