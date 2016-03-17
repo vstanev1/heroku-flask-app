@@ -20,7 +20,7 @@ from bokeh.embed import components
 app = Flask(__name__)
 
 app.vars={}
-stock_tick = 'GOOG'
+stock_tick = ''
 
 @app.route('/' , methods=['GET','POST'])
 def main():
@@ -43,7 +43,7 @@ def index():
   else:  
       app.vars['stock_tkr'] = request.form['stock_tkr']   
       global  stock_tick
-      stock_tick = 'GOOG'
+      stock_tick = 'GOOD'
       #?return render_template('index2.html')
       
 @app.route('/result' , methods=['POST'])
