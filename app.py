@@ -20,7 +20,7 @@ from bokeh.embed import components
 app = Flask(__name__)
 
 app.vars={}
-#stock_tick = ''
+stock_tick = ''
 
 @app.route('/' , methods=['GET','POST'])
 def main():
@@ -71,7 +71,7 @@ def result():
         new_data['Date'] = new_data[0].map(f)
         
         p=figure(title= 'Closing prices for the last month (20 working days)', x_axis_type="datetime")
-        r = p.line(new_data['Date'][0:20].values, new_data[4][0:20].values, alpha=0.5, line_width=3, legend= stock_tick)
+        r = p.line(new_data['Date'][0:20].values, new_data[1][0:20].values, alpha=0.5, line_width=3, legend= stock_tick)
         
         p.xaxis.axis_label = 'Date'
         p.yaxis.axis_label = 'Price (US dollars)'        
