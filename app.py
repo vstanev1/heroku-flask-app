@@ -20,7 +20,7 @@ from bokeh.embed import components
 app = Flask(__name__)
 
 app.vars={}
-stktr = ''
+stock_tick = 'GOOG'
 
 @app.route('/' , methods=['GET','POST'])
 def main():
