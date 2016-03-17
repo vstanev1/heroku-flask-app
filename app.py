@@ -71,7 +71,7 @@ def result():
         new_data['Date'] = new_data[0].map(f)
         
         p=figure(title= 'Closing prices for the last month (20 working days)', x_axis_type="datetime")
-        r = p.line(new_data['Date'][0:20].values, new_data[1][0:20].values, alpha=0.5, line_width=2)
+        r = p.line(new_data['Date'][0:20].values, new_data[1][0:20].values, alpha=0.5, line_width=4)
         script, div = components(p) 
         return render_template('graph.html', script=script, div=div)
    except:
