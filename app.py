@@ -42,6 +42,8 @@ def index():
      return render_template('index2.html')
   else:  
       app.vars['stock_tkr'] = request.form['stock_tkr']   
+      global  stock_tick
+      stock_tick = 'GOOG'
       #?return render_template('index2.html')
       
 @app.route('/result' , methods=['POST'])
@@ -53,7 +55,7 @@ def result():
   #  p.circle([1,2], [3,4])
   #  script, div = components(p) 
  #  return render_template('graph.html', script=script, div=div)  
-        stock_tick = 'GOOG'
+       # stock_tick = 'GOOG'
         web_adr = 'https://www.quandl.com/api/v3/datasets/WIKI/' + stock_tick + '.json'
         r = requests.get(web_adr)
         #json_data = r.json()
