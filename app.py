@@ -56,6 +56,7 @@ def result():
   #  script, div = components(p) 
  #  return render_template('graph.html', script=script, div=div)  
        # stock_tick = 'GOOG'
+   try:
         stock_tick = request.form['stock_tkr']   
         web_adr = 'https://www.quandl.com/api/v3/datasets/WIKI/' + stock_tick + '.json'
         r = requests.get(web_adr)
@@ -73,7 +74,8 @@ def result():
         r = p.line(new_data['Date'][1:30].values, new_data[1][1:30].values)
         script, div = components(p) 
         return render_template('graph.html', script=script, div=div)
-    
+   except:
+          return render_template('index.html')
 
     # plot = figure()
      # plot.circle([1,2], [3,4])
