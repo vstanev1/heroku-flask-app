@@ -56,7 +56,7 @@ def result():
   #  script, div = components(p) 
  #  return render_template('graph.html', script=script, div=div)  
        # stock_tick = 'GOOG'
-        app.vars['stock_tkr'] = request.form['stock_tkr']   
+        stock_tick = request.form['stock_tkr']   
         web_adr = 'https://www.quandl.com/api/v3/datasets/WIKI/' + stock_tick + '.json'
         r = requests.get(web_adr)
         #json_data = r.json()
