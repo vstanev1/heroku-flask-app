@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 import simplejson as json
 import datetime
-from datetime import datetime
+#import datetime
 
 #from bokeh.io import push_notetbook
 from bokeh.plotting import figure
@@ -20,7 +20,7 @@ from bokeh.embed import components
 app = Flask(__name__)
 
 app.vars={}
-stock_tick = ''
+#stock_tick = ''
 
 @app.route('/' , methods=['GET','POST'])
 def main():
@@ -42,8 +42,8 @@ def index():
      return render_template('index2.html')
   else:  
       app.vars['stock_tkr'] = request.form['stock_tkr']   
-      global  stock_tick
-      stock_tick = 'GOOD'
+     # global  stock_tick
+     # stock_tick = 'GOOD'
       #?return render_template('index2.html')
       
 @app.route('/result' , methods=['POST'])
@@ -71,7 +71,7 @@ def result():
         new_data['Date'] = new_data[0].map(f)
         
         p=figure(title= 'Closing prices for the last month (20 working days)', x_axis_type="datetime")
-        r = p.line(new_data['Date'][0:20].values, new_data[1][0:20].values, alpha=0.5, line_width=3, legend= stock_tick)
+        r = p.line(new_data['Date'][0:20].values, new_data[4][0:20].values, alpha=0.5, line_width=3, legend= stock_tick)
         
         p.xaxis.axis_label = 'Date'
         p.yaxis.axis_label = 'Price (US dollars)'        
@@ -93,7 +93,7 @@ def result():
     #return render_template('plots.html', snippet=plot_snippet)
   
    
-def build_plot():   
+#def build_plot():   
    #utput_file('plot.html', title='Plot')
  # x_data = np.arange(1, 101)
  # y_data = np.random.randint(0, 101, 100)
@@ -103,10 +103,10 @@ def build_plot():
  # line(x_data, y_data)
      
      #snippet = curplot().create_html_snippet(embed_base_url='../static/js/', embed_save_loc='./static/js')
-   snippet =  'index4.html'
+ #  snippet =  'index4.html'
     # Return the snippet we want to place in our page.
 
-   return snippet
+ #  return snippet
 
 
 if __name__ == '__main__':
